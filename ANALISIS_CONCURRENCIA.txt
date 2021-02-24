@@ -1,0 +1,7 @@
+Qué condiciones de carrera se podrían presentar?
+ - la primera condicion sera al momento de realizar una peticion POST pues esta accede a un recurso de persistencia critico, el cual guarda todos los planos, en caso de que
+ se accediera a este al mismo tiempo podria generar incongruencia o perderse peticiones.
+ - otro sera el momento de realizar peticion PUT esta puede llegar a ser un problema si se modifica el mismo recurso.
+ Cuales son las respectivas regiones críticas?
+ - las regiones mas criticas es la de persistencia como tal InMemoryBluePrintPersistence en este caso que extiende una interfaz, en esta aplicacion este es una region critica pues
+ maneja recursos necesarios para todos y que tienen que ser consistentes, y responder correctamente a todas las peticiones.
